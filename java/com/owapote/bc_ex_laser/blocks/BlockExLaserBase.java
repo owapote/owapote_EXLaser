@@ -1,3 +1,12 @@
+/*
+ * This file is based on BuildCraft's BlockLaser.java,
+ * which is licensed under the Mozilla Public License 2.0.
+ * 
+ * ModificationsCopyright (c) 2025  by owapote
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
+ * distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/
+ */
+
 package com.owapote.bc_ex_laser.blocks;
 
 import net.minecraft.block.material.Material;
