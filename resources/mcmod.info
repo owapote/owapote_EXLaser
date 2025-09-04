@@ -2,17 +2,18 @@
   {
     "modid": "bc_ex_laser",
     "name": "BuildCraft EXLaser",
-    "description": "Build Craftのレーザーの上位互換が作れます",
+    "description": "Build Craftのレーザーの上位互換が作れます！Mk2、MK3だけですがあります！",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "",
+    "url": "https://github.com/owapote/owapote_EXLaser",
     "updateUrl": "",
     "authorList": ["owapote"],
-    "credits": "owapote",
-    "logoFile": "",
+    "credits":"Contains code and assets derived from BuildCraft (MPL-2.0). See README_THIRD_PARTY.md",
+    "logoFile": "assets/bc_ex_laser/buildcraft_exlaser_logo.png",
     "screenshots": [],
     "dependencies": [
       "required-after:buildcraftcore"
-    ]
+    ],
+    "useDependencyInformation": true
   }
 ]
