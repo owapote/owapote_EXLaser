@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BLB",
+    "LDL",
+    "BLB"
+  ],
+  "key": {
+    "L": { "item": "bc_ex_laser:ex_laser_mk2" },
+    "B": { "item": "buildcraftsilicon:laser" },
+    "D": { "item": "minecraft:diamond_block" }
+  },
+  "result": {
+    "item": "bc_ex_laser:ex_laser_mk3"
+  }
+}

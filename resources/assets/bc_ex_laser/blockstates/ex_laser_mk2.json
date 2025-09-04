@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=down":  { "model": "bc_ex_laser:ex_laser_mk2", "x": 180, "y": 0 },
+    "facing=up":    { "model": "bc_ex_laser:ex_laser_mk2", "x": 0,   "y": 0 },
+    "facing=north": { "model": "bc_ex_laser:ex_laser_mk2", "x": 90,  "y": 0 },
+    "facing=south": { "model": "bc_ex_laser:ex_laser_mk2", "x": 90,  "y": 180 },
+    "facing=west":  { "model": "bc_ex_laser:ex_laser_mk2", "x": 90,  "y": 270 },
+    "facing=east":  { "model": "bc_ex_laser:ex_laser_mk2", "x": 90,  "y": 90 }
+  }
+}

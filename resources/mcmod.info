@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "bc_ex_laser",
+    "name": "BuildCraft EXLaser",
+    "description": "Build Craftのレーザーの上位互換が作れます",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["owapote"],
+    "credits": "owapote",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": [
+      "required-after:buildcraftcore"
+    ]
+  }
+]
