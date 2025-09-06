@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "GDG",
+    "BBB"
+  ],
+  "key": {
+    "B": { "item": "minecraft:blaze_powder" },
+    "G": { "item": "minecraft:glass"},
+    "D": { "item": "minecraft:diamond" }
+  },
+  "result": {
+    "item": "bc_ex_laser:heatproof_diamond_powder",
+    "count": 4
+  }
+}

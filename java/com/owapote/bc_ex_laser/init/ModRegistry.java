@@ -42,15 +42,16 @@ public class ModRegistry {
         Pair.of(BlockExLaserMk4::new, "ex_laser_mk4"),
         Pair.of(BlockExLaserMk5::new, "ex_laser_mk5")
     );
-    // private static final List<Pair<Supplier<ItemExLaserMaterialBase>, String>> EX_LASER_MATERIAL_DEFINES =
-    // Arrays.asList(
-    //     Pair.of(ItemHeatproofDiamondPowder::new, "heatproof_diamond_powder")
-    // );
+    
+    private static final List<Pair<Supplier<ItemExLaserMaterialBase>, String>> EX_LASER_MATERIAL_DEFINES =
+    Arrays.asList(
+        Pair.of(ItemHeatproofDiamondPowder::new, "heatproof_diamond_powder")
+    );
 
     //ブロックを保持する
     private static final HashMap<BlockExLaserBase, String> EX_LASERS = new HashMap<>();
     //アイテムを保持する
-    //private static final Map<ItemExLaserMaterialBase, String> EX_LASER_MATERIALS = new HashMap<>();
+    private static final Map<ItemExLaserMaterialBase, String> EX_LASER_MATERIALS = new HashMap<>();
 
     /** 
      * ブロック(実体)登録
@@ -84,14 +85,13 @@ public class ModRegistry {
             event.getRegistry().register(createExLaserItems(exLaserEntry.getKey()));
         }
 
-        // // 素材アイテム登録
-        // for (Pair<Supplier<ItemExLaserMaterialBase>, String> definePair : EX_LASER_MATERIAL_DEFINES) {
-        //     ItemExLaserMaterialBase item = definePair.getLeft().get();
-        //     item.setRegistryName(new ResourceLocation(BCEXLaserCore.MODID, definePair.getRight()));
-        //     item.setUnlocalizedName(BCEXLaserCore.MODID + "." + definePair.getRight());
-        //     event.getRegistry().register(item);
-        //     EX_LASER_MATERIALS.put(item, definePair.getRight());
-        // }
+        for (Pair<Supplier<ItemExLaserMaterialBase>, String> definePair : EX_LASER_MATERIAL_DEFINES) {
+            //中身だけ作成
+            ItemExLaserMaterialBase item = createExLaserMaterialItems(definePair.getLeft(), definePair.getRight());
+            //実際に登録
+            event.getRegistry().register(item);
+            EX_LASER_MATERIALS.put(item, definePair.getRight());
+        }
     }
 
     private static ItemBlock createExLaserItems(BlockExLaserBase blockExLaser){
@@ -101,9 +101,11 @@ public class ModRegistry {
         return itemBlock;
     }
 
-    private static Item createExLaserMaterialItems(ItemExLaserMaterialBase itemExLaserMaterial){
-        itemExLaserMaterial.setRegistryName(itemExLaserMaterial.getRegistryName());
-        return itemExLaserMaterial;
+    private static ItemExLaserMaterialBase createExLaserMaterialItems(Supplier<ItemExLaserMaterialBase> itemExLaserMaterial, String name){
+        ItemExLaserMaterialBase item = itemExLaserMaterial.get();
+        item.setRegistryName(new ResourceLocation(BCEXLaserCore.MODID, name));
+        item.setUnlocalizedName(BCEXLaserCore.MODID + "." + name);
+        return item;
     }
 
     /** 
@@ -113,22 +115,39 @@ public class ModRegistry {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-        for (Map.Entry<BlockExLaserBase, String> entry : EX_LASERS.entrySet()) {
-            createExLaserModels(entry);
+        //ブロックの登録
+        for (Map.Entry<BlockExLaserBase, String> exLaserEntry : EX_LASERS.entrySet()) {
+            createExLaserModels(exLaserEntry.getKey(), exLaserEntry.getValue());
+        }
+
+        //アイテムの登録
+        for (Map.Entry<ItemExLaserMaterialBase, String> materialEntry : EX_LASER_MATERIALS.entrySet()) {
+            createExLaserMaterialModels(materialEntry.getKey(), materialEntry.getValue());
         }
     }
 
-    private static void createExLaserModels(Map.Entry<BlockExLaserBase, String> entry){
-        Item item = Item.getItemFromBlock(entry.getKey());
-        if (item != null) {
+    private static void createExLaserModels(BlockExLaserBase exLaser, String name){
+        Item exLaserItem = Item.getItemFromBlock(exLaser);
+        if (exLaserItem != null) {
             ModelLoader.setCustomModelResourceLocation(
-                item,
+                exLaserItem,
                 0,
                 new net.minecraft.client.renderer.block.model.ModelResourceLocation(
-                    new ResourceLocation(BCEXLaserCore.MODID, entry.getValue()), 
-                    entry.getValue()
+                    new ResourceLocation(BCEXLaserCore.MODID, name), 
+                    name
                 )
             );
         }
+    }
+
+    private static void createExLaserMaterialModels(Item exLaserMaterial, String name){
+        ModelLoader.setCustomModelResourceLocation(
+            exLaserMaterial,
+            0,
+            new net.minecraft.client.renderer.block.model.ModelResourceLocation(
+                new ResourceLocation(BCEXLaserCore.MODID, name),
+                name
+            )
+        );
     }
 }

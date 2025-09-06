@@ -6,8 +6,8 @@
     "ILI"
   ],
   "key": {
-    "L": { "item": "bc_ex_laser:ex_laser_mk2" },
-    "I": { "item": "buildcraftsilicon:redstone_chipset", "data": 1 },
+    "L": { "item": "bc_ex_laser:ex_laser_mk3" },
+    "I": { "item": "buildcraftsilicon:redstone_chipset", "data": 2 },
     "D": { "item": "buildcraftcore:gear_diamond" }
   },
   "result": {

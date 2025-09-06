@@ -2,8 +2,8 @@
   {
     "modid": "bc_ex_laser",
     "name": "BuildCraft EXLaser",
-    "description": "Build Craftのレーザーの上位互換が作れます！Mk2、MK3だけですがあります！",
-    "version": "1.0.0",
+    "description": "BuildCraft EXLaser addon for Minecraft 1.12.2.\nAdds MK2–MK5 enhanced lasers, up to 256× more powerful than the original.\nIdeal for automation and advanced crafting.\nRequires BuildCraft 8.0.0.",
+    "version": "2.0.0",
     "mcversion": "1.12.2",
     "url": "https://github.com/owapote/owapote_EXLaser",
     "updateUrl": "",
