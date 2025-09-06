@@ -7,7 +7,7 @@
   ],
   "key": {
     "L": { "item": "buildcraftsilicon:laser" },
-    "I": { "item": "minecraft:iron_block" },
+    "I": { "item": "minecraft:iron_block"},
     "D": { "item": "minecraft:diamond_block" }
   },
   "result": {

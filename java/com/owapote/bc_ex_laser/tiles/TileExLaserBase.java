@@ -29,7 +29,6 @@ import java.util.Objects;
 import javax.annotation.Nonnull;
 
 import com.owapote.bc_ex_laser.BCEXLaserCore;
-import com.owapote.bc_ex_laser.init.ModBlocks;
 
 import buildcraft.api.core.SafeTimeTracker;
 import buildcraft.api.mj.ILaserTarget;
@@ -82,8 +81,8 @@ public abstract class TileExLaserBase extends TileBC_Neptune
     protected boolean worldHasUpdated = true;
 
     public TileExLaserBase(long batteryCapacity, long powerPerTick) {
-        this.batteryCapacity = batteryCapacity * 1024 * MjAPI.MJ;
-        this.powerPerTick = powerPerTick * 4 * MjAPI.MJ;
+        this.batteryCapacity = batteryCapacity * 1024L * MjAPI.MJ;
+        this.powerPerTick = powerPerTick * 4L * MjAPI.MJ;
         this.battery = new MjBattery(this.batteryCapacity);
         caps.addProvider(new MjCapabilityHelper(new MjBatteryReceiver(this.battery)));
     }

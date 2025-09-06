@@ -10,6 +10,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import com.owapote.bc_ex_laser.proxy.CommonProxy;
 import com.owapote.bc_ex_laser.tiles.TileExLaserMk2;
 import com.owapote.bc_ex_laser.tiles.TileExLaserMk3;
+import com.owapote.bc_ex_laser.tiles.TileExLaserMk4;
+import com.owapote.bc_ex_laser.tiles.TileExLaserMk5;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -39,6 +41,8 @@ public class BCEXLaserCore
         // タイルエンティティだけ登録
         GameRegistry.registerTileEntity(TileExLaserMk2.class, "ex_laser_mk2");
         GameRegistry.registerTileEntity(TileExLaserMk3.class, "ex_laser_mk3");
+        GameRegistry.registerTileEntity(TileExLaserMk4.class, "ex_laser_mk4");
+        GameRegistry.registerTileEntity(TileExLaserMk5.class, "ex_laser_mk5");
     }
 
     @EventHandler

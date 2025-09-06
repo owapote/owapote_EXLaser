@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "BLB",
+    "ILI",
     "LDL",
-    "BLB"
+    "ILI"
   ],
   "key": {
     "L": { "item": "bc_ex_laser:ex_laser_mk2" },
-    "B": { "item": "buildcraftsilicon:laser" },
-    "D": { "item": "minecraft:diamond_block" }
+    "I": { "item": "buildcraftsilicon:redstone_chipset", "data": 1 },
+    "D": { "item": "buildcraftcore:gear_diamond" }
   },
   "result": {
     "item": "bc_ex_laser:ex_laser_mk3"
