@@ -22,7 +22,7 @@ public class BlockExLaserMk4 extends BlockExLaserBase {
      */
     @Override
     public TileBC_Neptune createTileEntity(World world, IBlockState state) {
-        BCEXLaserCore.LOGGER.info("createTileEntity:ex_laser_mk4");
+        //BCEXLaserCore.LOGGER.info("createTileEntity:ex_laser_mk4");
         return new TileExLaserMk4();
     }
 

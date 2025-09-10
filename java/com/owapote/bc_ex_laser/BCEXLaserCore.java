@@ -37,7 +37,7 @@ public class BCEXLaserCore
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        BCEXLaserCore.LOGGER.info("preInit:create ex_laser");
+        //BCEXLaserCore.LOGGER.info("preInit:create ex_laser");
         // タイルエンティティだけ登録
         GameRegistry.registerTileEntity(TileExLaserMk2.class, "ex_laser_mk2");
         GameRegistry.registerTileEntity(TileExLaserMk3.class, "ex_laser_mk3");

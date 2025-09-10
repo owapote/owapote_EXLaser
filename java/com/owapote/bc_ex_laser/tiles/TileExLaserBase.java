@@ -153,11 +153,11 @@ public abstract class TileExLaserBase extends TileBC_Neptune
         }
         if (targetsNeedingPower.isEmpty()) {
             targetPos = null;
-            BCEXLaserCore.LOGGER.info("No targets needing power found.");
+            //BCEXLaserCore.LOGGER.info("No targets needing power found.");
             return;
         }
         targetPos = targetsNeedingPower.get(world.rand.nextInt(targetsNeedingPower.size()));
-        BCEXLaserCore.LOGGER.info("Selected target at {}", targetPos);
+        //BCEXLaserCore.LOGGER.info("Selected target at {}", targetPos);
     }
 
     /** 
@@ -224,7 +224,7 @@ public abstract class TileExLaserBase extends TileBC_Neptune
             } catch (Exception e) {
                 BCEXLaserCore.LOGGER.warn("Failed to read BLOCK_FACING_6 at {} : {}", pos, e.toString());
             }
-            BCEXLaserCore.LOGGER.info("MK2 Facing = {}", facing);
+            //BCEXLaserCore.LOGGER.info("MK2 Facing = {}", facing);
         }
 
         //サーバー側処理
@@ -233,7 +233,7 @@ public abstract class TileExLaserBase extends TileBC_Neptune
         if (worldHasUpdated) {
             findPossibleTargets();
             worldHasUpdated = false;
-            BCEXLaserCore.LOGGER.info("found targets: {}", targetPositions.size());
+            //BCEXLaserCore.LOGGER.info("found targets: {}", targetPositions.size());
         }
 
         if (!isPowerNeededAt(targetPos)) {
