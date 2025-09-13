@@ -26,7 +26,7 @@ public class BCEXLaserCore
 {
     public static final String MODID = "bc_ex_laser";
     public static final String NAME = "BuildCraft EXLaser";
-    public static final String VERSION = "2.1.0";
+    public static final String VERSION = "2.1.1";
 
     @SidedProxy(clientSide = "com.owapote.bc_ex_laser.proxy.ClientProxy",
                 serverSide = "com.owapote.bc_ex_laser.proxy.CommonProxy")
