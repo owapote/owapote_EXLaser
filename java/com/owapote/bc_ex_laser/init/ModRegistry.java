@@ -1,11 +1,9 @@
 package com.owapote.bc_ex_laser.init;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -120,29 +118,28 @@ public class ModRegistry {
             createExLaserModels(exLaserEntry.getKey(), exLaserEntry.getValue());
         }
 
-        //アイテムの登録
+        //アイテムの登録(アイテムなので直接登録)
         for (Map.Entry<ItemExLaserMaterialBase, String> materialEntry : EX_LASER_MATERIALS.entrySet()) {
-            createExLaserMaterialModels(materialEntry.getKey(), materialEntry.getValue());
+            registerCustomModelResourceLocation(materialEntry.getKey(), materialEntry.getValue());
         }
     }
 
     private static void createExLaserModels(BlockExLaserBase exLaser, String name){
+        //アイテムに変換して登録
         Item exLaserItem = Item.getItemFromBlock(exLaser);
         if (exLaserItem != null) {
-            ModelLoader.setCustomModelResourceLocation(
-                exLaserItem,
-                0,
-                new net.minecraft.client.renderer.block.model.ModelResourceLocation(
-                    new ResourceLocation(BCEXLaserCore.MODID, name), 
-                    name
-                )
-            );
+            registerCustomModelResourceLocation(exLaserItem, name);
         }
     }
 
-    private static void createExLaserMaterialModels(Item exLaserMaterial, String name){
+    /**
+     * setCustomModelResourceLocation()の共通化
+     * @param customItem
+     * @param name
+     */
+    private static void registerCustomModelResourceLocation(Item customItem, String name){
         ModelLoader.setCustomModelResourceLocation(
-            exLaserMaterial,
+            customItem,
             0,
             new net.minecraft.client.renderer.block.model.ModelResourceLocation(
                 new ResourceLocation(BCEXLaserCore.MODID, name),

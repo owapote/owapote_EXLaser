@@ -4,7 +4,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.World;
 
-import com.owapote.bc_ex_laser.BCEXLaserCore;
 import com.owapote.bc_ex_laser.tiles.TileExLaserMk3;
 
 import buildcraft.lib.tile.TileBC_Neptune;

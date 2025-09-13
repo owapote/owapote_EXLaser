@@ -9,7 +9,6 @@
 
 package com.owapote.bc_ex_laser.tiles;
 
-import buildcraft.silicon.BCSiliconBlocks;
 import buildcraft.lib.block.ILocalBlockUpdateSubscriber;
 import buildcraft.lib.block.LocalBlockUpdateNotifier;
 import buildcraft.lib.misc.LocaleUtil;
@@ -24,11 +23,8 @@ import buildcraft.lib.tile.TileBC_Neptune;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import javax.annotation.Nonnull;
-
-import com.owapote.bc_ex_laser.BCEXLaserCore;
 
 import buildcraft.api.core.SafeTimeTracker;
 import buildcraft.api.mj.ILaserTarget;
@@ -211,20 +207,6 @@ public abstract class TileExLaserBase extends TileBC_Neptune
                 updateLaser();
             }
             return;
-        } else {
-            // [GPT]サーバーで向きを取得してログ出力（例）
-            IBlockState state = world.getBlockState(pos);
-            EnumFacing facing = EnumFacing.UP; // デフォルト
-            try {
-                if (state.getProperties().containsKey(BuildCraftProperties.BLOCK_FACING_6)) {
-                    facing = state.getValue(BuildCraftProperties.BLOCK_FACING_6);
-                } else {
-                    BCEXLaserCore.LOGGER.warn("Block state for pos {} has no BLOCK_FACING_6 property: {}", pos, state);
-                }
-            } catch (Exception e) {
-                BCEXLaserCore.LOGGER.warn("Failed to read BLOCK_FACING_6 at {} : {}", pos, e.toString());
-            }
-            //BCEXLaserCore.LOGGER.info("MK2 Facing = {}", facing);
         }
 
         //サーバー側処理
